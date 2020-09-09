@@ -11,12 +11,15 @@ function Home() {
         <div className='home'>
             <div className='home__header'>
                 <div className='home__headerLeft'>
-                    <Link to='/about'>About</Link>
-                    <Link to='/store'>Store</Link>
+                {/* <Link to='/about'>Home</Link>
+                    <Link to='/store'>Donate</Link> */}
+                <a href = "https://opentabs.org/">Home</a>
+                <a href = "https://donorbox.org/opentabs">Donate</a>
                 </div>
                 <div className='home__headerRight'>
-                    <Link to='/gmail'>Gmail</Link>
-                    <Link to='/images'>Images</Link>
+                {/*    <Link to='/gmail'>Feedback</Link> */}
+                    <a href = "https://docs.google.com/forms/d/e/1FAIpQLScNIVjuhLCUF_CczUf2eCP3VOIiIfl-UhJAsh-f-SJbUq7WnQ/viewform">Feedback</a>
+                    <Link to='/images'>Login</Link>
                     <AppsIcon />
                     <Avatar />
                 </div>
