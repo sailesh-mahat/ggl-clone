@@ -15,7 +15,7 @@ body {
 
 .searchPage__logo {
     object-fit: contain;
-    height: 90px;
+    height: 70px;
     margin-right: 50px;
     margin-left: 80px;
 }
@@ -53,6 +53,7 @@ body {
 }
 
 .searchPage__option a {
+    font-size: 14px;
     margin-left: 5px;
 }
 
@@ -105,4 +106,8 @@ body {
     margin-top: 10px;
     color: #353535;
     line-height: 22.12px;
+}
+
+.searchPage__option > .MuiSvgIcon-root {
+    font-size: 18px;
 }
