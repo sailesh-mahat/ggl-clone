@@ -27,6 +27,16 @@ body {
     max-width: unset;
 }
 
+.addTo__button {
+   
+    margin: 5px;
+    padding: 7px 15px;
+    background-color: #f8f8f8;
+    border: 1px solid white;
+    text-transform: inherit;
+    color: #5f6368;
+}
+
 .searchPage__options {
     display:flex;
     align-items: center;

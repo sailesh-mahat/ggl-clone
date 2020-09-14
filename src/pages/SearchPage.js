@@ -4,6 +4,7 @@ import { useStateValue } from "../StateProvider";
 import useGoogleSearch from '../useGoogleSearch';
 import { Link } from "react-router-dom";
 import Search from './Search';
+import { Button } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import DescriptionIcon from "@material-ui/icons/Description";
 import ImageIcon from "@material-ui/icons/Image";
@@ -34,7 +35,7 @@ function SearchPage() {
 
                 <div className='searchPage__headerBody'>
                     <Search hideButtons />
-
+                
                     <div className='searchPage__options'>
                         <div className='searchPage__optionsLeft'>
                             <div className='searchPage__option'>
@@ -75,6 +76,7 @@ function SearchPage() {
                                 <DashboardIcon />
                                 <a href = "https://app.opentabs.org/tabbing">Dashboard</a>
                             </div>
+                            <Button className="addTo__button" variant="outlined">Add to Browser</Button>
                         {/*    <div className='searchPage__option'>
                                 <MoreVertIcon />
                                 <Link to="/more">More</Link>
