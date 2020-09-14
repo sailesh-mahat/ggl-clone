@@ -10,7 +10,8 @@ import { actionTypes } from "../reducer";
 function Search({ hideButtons = false }) {
     const [{}, dispatch] = useStateValue();
 
-    const [input, setInput] =useState("");
+    const [input, setInput] = useState("");
+    const [browser, setBrowser] = useState("Browser");
     const history = useHistory();
 
     const search = (e) => {
@@ -25,6 +26,17 @@ function Search({ hideButtons = false }) {
         history.push('/search');
     };
 
+    const addExtension = () => {
+        // CHROME (link to new extension page after publishing)
+      if (navigator.userAgent.indexOf("Chrome") != -1 ) {
+        window.open('https://chrome.google.com/webstore/detail/opentabs/igeeighenacaciapkehcacnojlegbnpa', '_blank');
+      }
+      // FIREFOX (link to new extension page after publishing)
+      else if (navigator.userAgent.indexOf("Firefox") != -1 ) {
+        window.open('https://addons.mozilla.org/en-US/firefox/addon/opentabs_org/', '_blank');
+      }
+    };
+
     return (
         <form className='search'>
             <div className='search__input'>
@@ -36,7 +48,7 @@ function Search({ hideButtons = false }) {
             {!hideButtons ? (
             <div className="search__buttons">
                 <Button type='submit' onClick={search} variant="outlined">Search</Button>
-                <Button variant="outlined">Add To Browser</Button>
+                <Button onClick={addExtension} variant="outlined">Add To Browser</Button>
             </div>
             ): (
             <div className="search__buttons">
