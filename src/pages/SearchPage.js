@@ -14,6 +14,7 @@ import FlightIcon from '@material-ui/icons/Flight';
 import FunctionsIcon from '@material-ui/icons/Functions';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import MoreVertIcon from "@material-ui/icons/MoreVert";
+import beta from "../beta.png";
 
 function SearchPage() {
     const [{ term }, dispatch] = useStateValue();
@@ -98,11 +99,14 @@ function SearchPage() {
                                 <a href = "https://app.opentabs.org/tabbing">Dashboard</a>
                             </div>
                             <Button className="addTo__button" onClick={addExtension} variant="outlined">Add to {browser}</Button>
+
+
                         {/*    <div className='searchPage__option'>
                                 <MoreVertIcon />
                                 <Link to="/more">More</Link>
                             </div>  */}      
                         </div>
+
                         {/*<div className='searchPage__optionsRight'>
                             <div className='searchPage__option'>
                                 <Link to="/settings">Settings</Link>
@@ -112,7 +116,10 @@ function SearchPage() {
                             </div>
                         </div>*/}
                     </div>
+
                 </div>
+                <img className = "beta" src ={beta} />
+
             </div>
 
               {true && (

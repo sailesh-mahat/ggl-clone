@@ -121,3 +121,9 @@ body {
 .searchPage__option > .MuiSvgIcon-root {
     font-size: 18px;
 }
+
+.beta {
+    margin-right: 0%;
+    height: 50px;
+    width: 50px;
+}
