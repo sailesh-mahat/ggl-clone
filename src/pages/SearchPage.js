@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './SearchPage.css'
 import { useStateValue } from "../StateProvider";
 import useGoogleSearch from '../useGoogleSearch';
@@ -17,9 +17,30 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 function SearchPage() {
     const [{ term }, dispatch] = useStateValue();
+    let browser = useState("Browser");
     const { data } = useGoogleSearch(term);
 
     console.log(data);
+
+    // CHROME (to display Chrome on Button)
+    if (navigator.userAgent.indexOf("Chrome") != -1 ) {
+        browser = "Chrome";
+    }
+    // FIREFOX (to display Firefox on Button)
+    else if (navigator.userAgent.indexOf("Firefox") != -1 ) {
+        browser = "Firefox";
+    }
+
+    const addExtension = () => {
+        // CHROME (link to new extension page after publishing)
+      if (navigator.userAgent.indexOf("Chrome") != -1 ) {
+        window.open('https://chrome.google.com/webstore/detail/opentabs/igeeighenacaciapkehcacnojlegbnpa', '_blank');
+      }
+      // FIREFOX (link to new extension page after publishing)
+      else if (navigator.userAgent.indexOf("Firefox") != -1 ) {
+        window.open('https://addons.mozilla.org/en-US/firefox/addon/opentabs_org/', '_blank');
+      }
+    };
 
     return (
         <div className='searchPage'>
@@ -76,7 +97,7 @@ function SearchPage() {
                                 <DashboardIcon />
                                 <a href = "https://app.opentabs.org/tabbing">Dashboard</a>
                             </div>
-                            <Button className="addTo__button" variant="outlined">Add to Browser</Button>
+                            <Button className="addTo__button" onClick={addExtension} variant="outlined">Add to {browser}</Button>
                         {/*    <div className='searchPage__option'>
                                 <MoreVertIcon />
                                 <Link to="/more">More</Link>

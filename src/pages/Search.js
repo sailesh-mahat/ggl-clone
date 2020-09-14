@@ -11,7 +11,7 @@ function Search({ hideButtons = false }) {
     const [{}, dispatch] = useStateValue();
 
     const [input, setInput] = useState("");
-    const [browser, setBrowser] = useState("Browser");
+    let browser = useState("Browser");
     const history = useHistory();
 
     const search = (e) => {
@@ -25,6 +25,16 @@ function Search({ hideButtons = false }) {
 
         history.push('/search');
     };
+
+      // CHROME (to display Chrome on Button)
+      if (navigator.userAgent.indexOf("Chrome") != -1 ) {
+        browser = "Chrome";
+      }
+      // FIREFOX (to display Firefox on Button)
+      else if (navigator.userAgent.indexOf("Firefox") != -1 ) {
+        browser = "Firefox";
+          }
+
 
     const addExtension = () => {
         // CHROME (link to new extension page after publishing)
@@ -48,7 +58,7 @@ function Search({ hideButtons = false }) {
             {!hideButtons ? (
             <div className="search__buttons">
                 <Button type='submit' onClick={search} variant="outlined">Search</Button>
-                <Button onClick={addExtension} variant="outlined">Add To Browser</Button>
+                <Button onClick={addExtension} variant="outlined">Add To {browser}</Button>
             </div>
             ): (
             <div className="search__buttons">
